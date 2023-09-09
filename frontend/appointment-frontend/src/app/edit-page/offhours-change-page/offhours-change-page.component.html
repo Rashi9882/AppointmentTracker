@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="assets/img/logo_new.jpg" class="logo-image">
+
+    <div class="container-fluid">
+        <!-- <img src="assets/img/logo_new.jpg" class="logo-image"> -->
+        <div class="navbar-brand">TRACKER</div>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <h6 class="nav-link active" aria-current="page" routerLink="/appointment">
+                    Appointment</h6>
+            </li>
+            <li class="nav-item">
+                <h6 class="nav-link" tabindex="-1" routerLink="/profile">Profile</h6>
+            </li>
+            <li class="nav-item">
+                <h6 class="nav-link" tabindex="-1" routerLink="/">Logout</h6>
+            </li>
+        </ul>
+    </div>
+</nav><br>
+
+
+<div class="body">
+
+    <!-- offhours response page -->
+    <div *ngIf="!offHoursPage">
+        <!-- offhours updated succesfully -->
+        <div *ngIf="successmessage" class="success">
+            <img src="assets/img/tick.png" alt="Tick Icon" class="tick-image">
+            <p>Your Off Hours are updated!.<a routerLink="/profile">Click</a> to go at profile page.</p>
+        </div>
+
+        <!-- offhours not updated successfully -->
+        <div *ngIf="errormessage" class="error">
+            <img src="assets/img/error.jpg" alt="Error Icon" class="error-image">
+            <p>OOPS! Your Off Hours details are not updated. Try Again</p>
+        </div>
+
+    </div>
+
+    <!-- offhours update page -->
+    <div *ngIf="offHoursPage">
+        <h2>Edit OffHours Details</h2><br><br>
+
+        <form (ngSubmit)="onSubmit(updateForm)" #updateForm="ngForm">
+            <div class="form-floating mb-3">
+                <input type="time" required class="form-control" id="offhoursfrom" placeholder="off hours (from)"
+                    name="fromOffTime" [(ngModel)]="fromOffTime">
+                <label for="offhoursfrom">Off Hours(From)</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="time" required class="form-control" id="offhoursto" placeholder="off hours (to)"
+                    name="toffTime" [(ngModel)]="toffTime">
+                <label for="offhoursto">Off Hours(To)</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
