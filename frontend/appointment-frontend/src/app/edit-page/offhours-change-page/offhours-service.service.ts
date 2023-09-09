@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class OffhoursServiceService {
 
-  url: string = 'update/userhours/'
+  url: string = 'https://appointmenttracker.onrender.com/update/userhours/'
   constructor(private http: HttpClient) { }
 
   updateOffHours(data: any, i: string): Observable<any> {

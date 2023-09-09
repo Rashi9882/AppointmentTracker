@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class AppointmentServiceService {
 
-  url: string = 'appointment'
+  url: string = 'https://appointmenttracker.onrender.com/appointment'
 
   constructor(private http: HttpClient) {}
 

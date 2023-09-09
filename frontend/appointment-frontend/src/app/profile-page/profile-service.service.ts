@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http'
 })
 export class ProfileServiceService {
 
-  url: string = 'appointment/'
-  _url: string = 'user/'
+  url: string = 'https://appointmenttracker.onrender.com/appointment/'
+  _url: string = 'https://appointmenttracker.onrender.com/user/'
 
   constructor(private http: HttpClient) { }
 

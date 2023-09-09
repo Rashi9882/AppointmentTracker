@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class PasswordServiceService {
 
-  url: string = 'update/password/'
+  url: string = 'https://appointmenttracker.onrender.com/update/password/'
   constructor(private http: HttpClient) { }
 
   updatePassword(data: any, i: string): Observable<any> {

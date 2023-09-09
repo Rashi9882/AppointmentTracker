@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class LoginServiceService {
 
-  url: string = 'login'
+  url: string = 'https://appointmenttracker.onrender.com/login'
   constructor(private http: HttpClient) { }
 
   getLogin(data: any): Observable<any> {
